@@ -1,71 +1,82 @@
 package br.com.lp2.vendedor.app;
 
 import java.text.ParseException;
-import java.util.Scanner;
 
+import br.com.lp2.vendedor.app.estados.EnumEstadoConsole;
+import br.com.lp2.vendedor.app.estados.MaquinaEstadoConsole;
 import br.com.lp2.vendedor.comum.Enums.TipoCargo;
+import br.com.lp2.vendedor.comum.VO.Funcionario;
+import br.com.lp2.vendedor.service.controller.FuncionarioController;
 
 public class App {
+	public static MaquinaEstadoConsole estadoConsole;
+	
 	public static void main(String[] args) throws ParseException, InterruptedException {
-		Scanner readLine = new Scanner(System.in); // Create a Scanner object
-		int option = 0;
 		
-		TipoCargo userCargo = printLogin();
-		
-		do {
-			printMenu(userCargo);			
-			try {
-				option = Integer.parseInt(readLine.nextLine());				
-			} catch (Exception e) {
-				System.out.println("Digite apenas numeros validos");
-			}
-		} while (option < 1 || option > 4);
+		estadoConsole = EnumEstadoConsole.BEM_VINDO.getEstadoMaquina();;
+        Boolean saida = false;
+        while (!saida){
+            saida = estadoConsole.Executa();
+        }
 		
 		
+//		Scanner readLine = new Scanner(System.in); // Create a Scanner object
+//		int option = 0;
+//		
+//		TipoCargo userCargo = Metodos.printLogin();
+//		
+//		do {
+//			Metodos.printMenu(userCargo);			
+//			try {
+//				option = Integer.parseInt(readLine.nextLine());				
+//			} catch (Exception e) {
+//				System.out.println("Digite apenas numeros validos");
+//			}
+//		} while (option < 1 || option > 4);
+
+//		try (FileWriter writer = new FileWriter("app.log"); BufferedWriter bw = new BufferedWriter(writer);) {
+//			bw.write("teste");
+//
+//		} catch (IOException e) {
+//			System.err.format("IOException: %s%n", e);
+//		}
+//
+//		Charset charset = Charset.forName("US-ASCII");
+//		Path file = Paths.get("app.log");
+//		try (BufferedReader reader = Files.newBufferedReader(file, charset)) {
+//			String line = null;
+//			while ((line = reader.readLine()) != null) {
+//				System.out.println(line);
+//			}
+//		} catch (IOException x) {
+//			System.err.format("IOException: %s%n", x);
+//		}
+//		try (BufferedWriter writer = new BufferedWriter(new FileWriter("f.txt", true));) {
+//
+//			writer.write("1");
+//			writer.newLine();
+//
+//			System.out.println("existe");
+//
+//		} catch (Exception e) {
+//			c
+//		}
+		
+//		Funcionario f = new Funcionario("admin", 1, TipoCargo.GERENTE, "admin", "admin");
+//		FuncionarioController fCont = new FuncionarioController();
+//		try {
+//			boolean b = fCont.insereFuncionario(f);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//		System.out.println("Foi");
+//		
+
+		
+		
+
+
 	}
 
-	private static TipoCargo printLogin() throws InterruptedException {
-		boolean repeat = true;
-		int usuario = 0;
-		while (repeat) {
-			Scanner readLine = new Scanner(System.in); // Create a Scanner object
-			System.out.println("Qual tipo de usuario deseja entrar no sistema:");
-			System.out.println("1 - Gerente \n2 - Vendedor \nEscolha: ");
-			try {
-				usuario = Integer.parseInt(readLine.nextLine());
-			} catch (Exception e) {
-				System.out.println("Digite apenas numeros validos");
-			}
-			
-			if (usuario == 1 || usuario == 2)
-				repeat = false;
-		}
-		int sleepTime = 2000;
-		switch (usuario) {
-		case 1:
-			System.out.println("Logando como Gerente ...\n\n");
-			Thread.sleep(sleepTime);
-			return TipoCargo.GERENTE;
-
-		case 2:
-			System.out.println("Logando como Vendedor ...\n\n");
-			Thread.sleep(sleepTime);
-			return TipoCargo.VENDEDOR;
-
-		default:
-			System.out.println("Logando como Vendedor ...\n\n");
-			Thread.sleep(sleepTime);
-			return TipoCargo.VENDEDOR;
-		}
-	}
-
-	private static void printMenu(TipoCargo userCargo) {
-		System.out.println("Voce esta logado como " + userCargo);
-		System.out.println("O que deseja fazer?");
-		System.out.println("1 - Cadastrar produto");
-		System.out.println("2 - Cadastrar pedido");
-		System.out.println("3 - Cadastrar funcionario");
-		System.out.println("4 - Cadastrar cliente");
-		System.out.println("Opcao: ");
-	}
+	
 }
