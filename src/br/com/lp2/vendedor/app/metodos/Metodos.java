@@ -42,17 +42,7 @@ public class Metodos {
 			Thread.sleep(sleepTime);
 			return TipoCargo.VENDEDOR;
 		}
-	}
-
-	public static void printMenu(TipoCargo userCargo) {
-		System.out.println("Voce esta logado como " + userCargo);
-		System.out.println("O que deseja fazer?");
-		System.out.println("1 - Cadastrar produto");
-		System.out.println("2 - Cadastrar pedido");
-		System.out.println("3 - Cadastrar funcionario");
-		System.out.println("4 - Cadastrar cliente");
-		System.out.println("Opcao: ");
-	}
+	}	
 	
 	public static void InicializaCredencial() {
 		Funcionario f = new Funcionario("admin", 1, TipoCargo.GERENTE, "admin", "admin");

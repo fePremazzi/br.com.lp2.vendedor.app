@@ -28,8 +28,10 @@ public class EstadoConsoleLogin extends MaquinaEstadoConsole {
         FuncionarioController funcController = new FuncionarioController();
         boolean haceAccess = funcController.validByUsername(user);
         
-        if (haceAccess)
-            App.estadoConsole = EnumEstadoConsole.MENU_PRINCIPAL.getEstadoMaquina();
+        if (haceAccess) {
+        	App.currentUser = user;
+        	App.estadoConsole = EnumEstadoConsole.MENU_PRINCIPAL.getEstadoMaquina();
+        }            
         else {
             System.out.println("Dados invalidos!");
         }            

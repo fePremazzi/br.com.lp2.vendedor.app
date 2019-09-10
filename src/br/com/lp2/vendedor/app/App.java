@@ -9,7 +9,9 @@ import br.com.lp2.vendedor.comum.VO.Funcionario;
 import br.com.lp2.vendedor.service.controller.FuncionarioController;
 
 public class App {
+	
 	public static MaquinaEstadoConsole estadoConsole;
+	public static Funcionario currentUser; 
 	
 	public static void main(String[] args) throws ParseException, InterruptedException {
 		

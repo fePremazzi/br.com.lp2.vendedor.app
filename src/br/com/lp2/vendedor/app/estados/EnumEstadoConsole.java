@@ -5,10 +5,6 @@
  */
 package br.com.lp2.vendedor.app.estados;
 
-/**
- *
- * @author gabriell
- */
 public enum EnumEstadoConsole {
     
     BEM_VINDO(new EstadoConsoleBemVindo()),

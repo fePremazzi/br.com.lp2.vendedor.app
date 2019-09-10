@@ -5,10 +5,7 @@
  */
 package br.com.lp2.vendedor.app.estados;
 
-/**
- *
- * @author gabriell
- */
+
 public abstract class MaquinaEstadoConsole {
     public abstract boolean Executa();
 }
