@@ -45,7 +45,7 @@ public class Metodos {
 	}	
 	
 	public static void InicializaCredencial() {
-		Funcionario f = new Funcionario("admin", 1, TipoCargo.GERENTE, "admin", "admin");
+		Funcionario f = new Funcionario(1, "admin", TipoCargo.GERENTE, "admin", "admin");
 		FuncionarioController fCont = new FuncionarioController();
 		try {
 			boolean b = fCont.insereFuncionario(f);

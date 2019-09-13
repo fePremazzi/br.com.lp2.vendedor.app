@@ -19,6 +19,7 @@ public class EstadoConsoleBemVindo extends MaquinaEstadoConsole{
         System.out.println("Indique a opção desejada!");
         System.out.println("1 - Login");
         System.out.println("0 - Sair");
+        System.out.println("Opção: ");
         Scanner scan = new Scanner(System.in);
         int opcao = scan.nextInt();
         switch (opcao)

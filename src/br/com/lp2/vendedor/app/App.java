@@ -1,27 +1,25 @@
 package br.com.lp2.vendedor.app;
 
+import java.io.IOException;
 import java.text.ParseException;
 
 import br.com.lp2.vendedor.app.estados.EnumEstadoConsole;
 import br.com.lp2.vendedor.app.estados.MaquinaEstadoConsole;
-import br.com.lp2.vendedor.comum.Enums.TipoCargo;
 import br.com.lp2.vendedor.comum.VO.Funcionario;
-import br.com.lp2.vendedor.service.controller.FuncionarioController;
 
 public class App {
-	
+
 	public static MaquinaEstadoConsole estadoConsole;
-	public static Funcionario currentUser; 
-	
-	public static void main(String[] args) throws ParseException, InterruptedException {
-		
+	public static Funcionario currentUser;
+
+	public static void main(String[] args) throws ParseException, InterruptedException, IOException {
+
 		estadoConsole = EnumEstadoConsole.BEM_VINDO.getEstadoMaquina();;
         Boolean saida = false;
         while (!saida){
             saida = estadoConsole.Executa();
         }
-		
-		
+
 //		Scanner readLine = new Scanner(System.in); // Create a Scanner object
 //		int option = 0;
 //		
@@ -63,7 +61,7 @@ public class App {
 //		} catch (Exception e) {
 //			c
 //		}
-		
+
 //		Funcionario f = new Funcionario("admin", 1, TipoCargo.GERENTE, "admin", "admin");
 //		FuncionarioController fCont = new FuncionarioController();
 //		try {
@@ -74,11 +72,7 @@ public class App {
 //		System.out.println("Foi");
 //		
 
-		
-		
-
 
 	}
 
-	
 }
