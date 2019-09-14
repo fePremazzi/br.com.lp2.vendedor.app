@@ -4,7 +4,7 @@ import br.com.lp2.vendedor.app.estados.MaquinaEstadoConsole;
 
 public enum EnumEstadoConsoleDeleta {
 	
-	MENU_DELETA(new EstadoMenuAtualiza()),
+	MENU_DELETA(new EstadoMenuDeletar()),
 
 	DELETA_PRODUTO(new EstadoDeletaProduto()),
 

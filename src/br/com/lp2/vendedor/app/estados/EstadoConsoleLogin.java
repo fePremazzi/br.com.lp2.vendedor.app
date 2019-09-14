@@ -29,7 +29,7 @@ public class EstadoConsoleLogin extends MaquinaEstadoConsole {
         boolean haceAccess = funcController.validByUsername(user);
         
         if (haceAccess) {
-        	App.currentUser = user;
+        	App.currentUser = funcController.consulta(user.getUsername());        	
         	App.estadoConsole = EnumEstadoConsole.MENU_PRINCIPAL.getEstadoMaquina();
         }            
         else {

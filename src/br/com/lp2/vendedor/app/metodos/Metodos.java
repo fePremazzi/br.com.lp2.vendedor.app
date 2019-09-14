@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import br.com.lp2.vendedor.comum.Enums.TipoCargo;
 import br.com.lp2.vendedor.comum.VO.Funcionario;
-import br.com.lp2.vendedor.dao.daos.FuncionarioDAO;
 import br.com.lp2.vendedor.service.controller.FuncionarioController;
 
 public class Metodos {
@@ -48,7 +47,7 @@ public class Metodos {
 		Funcionario f = new Funcionario(1, "admin", TipoCargo.GERENTE, "admin", "admin");
 		FuncionarioController fCont = new FuncionarioController();
 		try {
-			boolean b = fCont.insereFuncionario(f);
+			boolean b = fCont.insere(f);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

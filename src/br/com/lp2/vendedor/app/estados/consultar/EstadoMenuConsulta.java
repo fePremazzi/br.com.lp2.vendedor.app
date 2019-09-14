@@ -11,7 +11,7 @@ public class EstadoMenuConsulta extends MaquinaEstadoConsole {
 
 	@Override
 	public boolean Executa() {
-		System.out.println("*** Menu Consulta ***");		
+		System.out.println("*** Menu CONSULTAR ***");		
 		printMenuCadastro(App.currentUser);
 		Scanner scan = new Scanner(System.in);
 		

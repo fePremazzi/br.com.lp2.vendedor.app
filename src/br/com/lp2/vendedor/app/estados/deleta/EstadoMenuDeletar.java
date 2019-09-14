@@ -7,11 +7,11 @@ import br.com.lp2.vendedor.app.estados.EnumEstadoConsole;
 import br.com.lp2.vendedor.app.estados.MaquinaEstadoConsole;
 import br.com.lp2.vendedor.comum.VO.Funcionario;
 
-public class EstadoMenuAtualiza extends MaquinaEstadoConsole {
+public class EstadoMenuDeletar extends MaquinaEstadoConsole {
 
 	@Override
 	public boolean Executa() {
-		System.out.println("*** Menu cadastro ***");		
+		System.out.println("*** Menu DELETAR ***");		
 		printMenuCadastro(App.currentUser);
 		Scanner scan = new Scanner(System.in);
 		
